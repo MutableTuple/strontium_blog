@@ -5,4 +5,12 @@ export async function getAllBlogs() {
   if (error) console.log(error);
   return data;
 }
-export async function getBlogByID(id) {}
+export async function getBlogByID(id) {
+  const { data, error } = await supabase
+    .from("blogs")
+    .select("*")
+    .eq("id", id)
+    .single();
+  if (error) console.log(error);
+  return data;
+}
