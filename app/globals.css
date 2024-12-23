@@ -3,19 +3,79 @@
 @tailwind utilities;
 
 :root {
+  /* Default Light Theme */
   --background: #ffffff;
   --foreground: #171717;
+  --text: #333333;
+  --accent: #f9fafb;
+
+  /* Crème Theme */
+  --creme-background: #fffaf3;
+  --creme-foreground: #5e4433;
+
+  /* Pink Theme */
+  --pink-background: #ffe5ec;
+  --pink-foreground: #5a2d37;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  /* Dark Theme */
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --text: #e5e7eb;
+  --accent: #111827;
+}
+
+.creme {
+  /* Crème Theme */
+  --background: var(--creme-background);
+  --foreground: var(--creme-foreground);
+}
+
+.pink {
+  /* Pink Theme */
+  --background: var(--pink-background);
+  --foreground: var(--pink-foreground);
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Tailwind specific utilities */
+.bg-creme-100 {
+  background-color: #fffaf3;
+}
+
+.bg-creme-500 {
+  background-color: #f2d3b2;
+}
+
+.bg-pink-100 {
+  background-color: #ffe5ec;
+}
+
+.bg-pink-500 {
+  background-color: #f79bb0;
+}
+
+.text-creme-900 {
+  color: #d4c3b2;
+}
+
+.text-pink-900 {
+  color: #c1476a;
+}
+
+.text-light-text {
+  color: var(--text);
+}
+
+.text-dark-text {
+  color: var(--text);
+}
+
+.text-accent {
+  color: var(--accent);
 }
