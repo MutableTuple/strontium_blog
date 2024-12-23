@@ -2,6 +2,7 @@ import { Poppins, Josefin_Sans } from "next/font/google"; // Import both Poppins
 import "./globals.css";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 // Load the Poppins font
 const poppins = Poppins({
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
         <div className="">{children}</div>
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-5L9EY26LJS" />
     </html>
   );
 }
