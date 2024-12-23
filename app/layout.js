@@ -1,6 +1,7 @@
 import { Poppins, Josefin_Sans } from "next/font/google"; // Import both Poppins and Josefin Sans fonts
 import "./globals.css";
 import Navbar from "./_components/Navbar";
+import Footer from "./_components/Footer";
 
 // Load the Poppins font
 const poppins = Poppins({
@@ -28,10 +29,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} ${josefinSans.className} antialiased`}
+        className={`${poppins.className} ${josefinSans.className} antialiased mt-20`}
       >
         <Navbar />
         <div className="">{children}</div>
+        <Footer />
       </body>
     </html>
   );

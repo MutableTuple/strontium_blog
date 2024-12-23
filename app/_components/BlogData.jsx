@@ -66,7 +66,7 @@ const Markdown = ({ text }) => {
       // Handle code blocks
       if (line.startsWith("```")) {
         result.push(
-          <pre key={index} className="bg-gray-100 p-4 rounded-lg my-4">
+          <pre key={index} className="bg-gray-100 p-4  my-4">
             <code>{line.slice(3)}</code>
           </pre>
         );
@@ -81,7 +81,7 @@ const Markdown = ({ text }) => {
             key={index}
             src={src}
             alt={alt}
-            className="max-w-full h-auto my-4 rounded-lg"
+            className="max-w-full h-auto my-4 "
           />
         );
         return;
@@ -139,7 +139,7 @@ export default function BlogData({ requested_blog }) {
       <img
         src={requested_blog.image}
         alt={requested_blog.blog_title}
-        className="w-full h-auto rounded-lg my-6"
+        className="w-full h-auto  my-6"
       />
       <div>
         <Markdown text={requested_blog.blog_content} />
