@@ -13,7 +13,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <Link href="/">
             <div className="text-xl font-bold bg-gradient-to-r from-stone-950 to-stone-500 bg-clip-text text-transparent">
-              Strontium
+              st.r &#9654;
             </div>
           </Link>
 

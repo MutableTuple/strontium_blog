@@ -141,6 +141,9 @@ export default function BlogData({ requested_blog }) {
         alt={requested_blog.blog_title}
         className="w-full h-auto  my-6"
       />
+      <p className="text-xs text-stone-400 italic font-thin">
+        [ source: {requested_blog.image}]
+      </p>
       <div>
         <Markdown text={requested_blog.blog_content} />
       </div>

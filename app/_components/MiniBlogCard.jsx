@@ -1,6 +1,7 @@
 import React from "react";
 import { BiUpvote } from "react-icons/bi";
 import { FaRegCommentAlt } from "react-icons/fa";
+import UpvoteBtn from "./UpvoteBtn";
 
 export default async function MiniBlogCard({
   title,
@@ -31,10 +32,7 @@ export default async function MiniBlogCard({
             </div>
           </div>
           <div className="flex gap-3 text-xs">
-            <div className="flex items-center gap-1">
-              <BiUpvote className="text-sm sm:text-base" />
-              {upvotes}
-            </div>
+            <UpvoteBtn upvotes={upvotes} />
             <div className="flex items-center gap-1">
               <FaRegCommentAlt className="text-sm sm:text-base" />
               {comments}

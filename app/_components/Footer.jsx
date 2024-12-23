@@ -8,15 +8,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row justify-between items-center">
           <div className="text-lg font-bold text-gray-800 mb-4 sm:mb-0">
-            Strontium
+            St.r &#9654;
           </div>
           <ul className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8">
             <li>
               <Link
-                href="/stores"
+                href="/stories"
                 className="text-gray-800 hover:text-gray-600 transition-colors duration-200"
               >
-                Stores
+                Stories
               </Link>
             </li>
             <li>
@@ -52,7 +52,7 @@ export default function Footer() {
             <FaInstagram size={24} />
           </Link>
           <Link
-            href="https://www.linkedin.com"
+            href="https://www.linkedin.com/company/strontiumapp"
             target="_blank"
             className="text-gray-800 hover:text-blue-700 transition-colors duration-200"
           >
