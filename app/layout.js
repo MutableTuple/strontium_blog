@@ -25,6 +25,7 @@ export const metadata = {
   description:
     "A modern blog for Gen Z, where you can explore the latest trends and insightful articles.", // Updated description
 };
+export const revalidate = 60;
 
 export default function RootLayout({ children }) {
   return (

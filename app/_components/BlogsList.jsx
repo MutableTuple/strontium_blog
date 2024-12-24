@@ -4,7 +4,6 @@ import { getAllBlogs } from "../_lib/data-service";
 import Link from "next/link";
 export default async function BlogsList() {
   const blogs = await getAllBlogs();
-
   return (
     <>
       {blogs.map((blog) => (
