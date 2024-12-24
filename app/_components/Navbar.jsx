@@ -18,7 +18,7 @@ export default function Navbar() {
           </Link>
 
           <ul className="hidden md:flex items-center space-x-8">
-            {["Stories", "shorts"].map((item) => (
+            {["Stories"].map((item) => (
               <li
                 key={item}
                 className="text-stone-600 hover:text-stone-950 transition-colors duration-200"
@@ -55,7 +55,7 @@ export default function Navbar() {
       >
         <div className="px-4 py-2">
           <ul className="flex flex-col space-y-4">
-            {["Trending Blogs", "Stories"].map((item) => (
+            {["Stories"].map((item) => (
               <li
                 key={item}
                 className="py-2 text-stone-600 hover:text-stone-950 transition-colors duration-200"
