@@ -4,6 +4,7 @@ import { FaRegCommentAlt } from "react-icons/fa";
 import UpvoteBtn from "./UpvoteBtn";
 
 export default async function MiniBlogCard({
+  id,
   title,
   description,
   upvotes,
@@ -33,7 +34,7 @@ export default async function MiniBlogCard({
             </div>
           </div>
           <div className="flex gap-3 text-xs">
-            <UpvoteBtn upvotes={upvotes} />
+            <UpvoteBtn initialUpvotes={upvotes} id={id} table="blogs" />
             <div className="flex items-center gap-1">
               <FaRegCommentAlt className="text-sm sm:text-base" />
               {comments}

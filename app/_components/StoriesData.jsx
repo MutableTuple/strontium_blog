@@ -148,8 +148,11 @@ export default function StoriesData({ stories_data }) {
         <Markdown text={stories_data.content} />
       </div>
       <div className="border flex flex-col max-w-fit p-2 gap-1 items-center">
-        <UpvoteBtn />
-        <p>{stories_data.likes}</p>
+        <UpvoteBtn
+          id={stories_data.id}
+          initialUpvotes={stories_data.likes}
+          table="stories"
+        />
       </div>
     </article>
   );

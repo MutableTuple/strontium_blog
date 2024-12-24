@@ -206,8 +206,11 @@ export default function BlogData({ requested_blog }) {
         </div>
 
         <div className="border flex flex-col max-w-fit p-2 gap-1 items-center">
-          <UpvoteBtn />
-          <p>{requested_blog.likes}</p>
+          <UpvoteBtn
+            table="blogs"
+            id={requested_blog.id}
+            initialUpvotes={requested_blog.likes}
+          />
         </div>
 
         {requested_blog.author && (
