@@ -11,7 +11,7 @@ export default async function HomeTopicsSidebar() {
     <div className="hidden lg:block border-l px-8 w-full col-start-5 col-end-8">
       {/* Sticky wrapper */}
       <div className="sticky top-8">
-        <h2 className="text-xl font-medium mb-4 flex gap-2 items-center">
+        <h2 className="text-md font-medium mb-4 flex gap-2 items-center">
           <IoMdTrendingUp /> Trending in past 24 hrs
         </h2>
         <div className="space-y-4 flex flex-col">

@@ -28,11 +28,11 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
-            <li>
+            {/* <li>
               <button className="px-4 py-2  bg-stone-950 text-white hover:bg-stone-800 transition-colors duration-200">
                 Login
               </button>
-            </li>
+            </li> */}
           </ul>
 
           <button
@@ -65,11 +65,11 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
-            <li className="py-2">
+            {/* <li className="py-2">
               <button className="w-full px-4 py-2 rounded-full bg-stone-950 text-white hover:bg-stone-800 transition-colors duration-200">
                 Login
               </button>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

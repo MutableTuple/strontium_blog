@@ -1,6 +1,5 @@
 import React from "react";
 import UpvoteBtn from "./UpvoteBtn";
-
 const Markdown = ({ text }) => {
   const renderMarkdown = (content) => {
     const lines = content.split("\n");
@@ -114,43 +113,43 @@ const Markdown = ({ text }) => {
 };
 
 /*
-# Main title (H1)
-## Section title (H2) 
-### Subsection (H3)
+  # Main title (H1)
+  ## Section title (H2) 
+  ### Subsection (H3)
+  
+  - Bullet point
+  - Another point
+  
+  **Bold text**
+  *Italic text*
+  
+  ![Alt text](/path/to/image.jpg)
+  
+  Regular paragraphs are separated by blank lines
+  
+  `inline code`
+  
+  ```code block```
+  */
 
-- Bullet point
-- Another point
-
-**Bold text**
-*Italic text*
-
-![Alt text](/path/to/image.jpg)
-
-Regular paragraphs are separated by blank lines
-
-`inline code`
-
-```code block```
-*/
-
-export default function BlogData({ requested_blog }) {
+export default function StoriesData({ stories_data }) {
   return (
     <article className="max-w-4xl mx-auto px-4">
-      <h1 className="text-4xl font-bold my-6">{requested_blog.blog_title}</h1>
+      <h1 className="text-4xl font-bold my-6">{stories_data.blog_title}</h1>
       <img
-        src={requested_blog.image}
-        alt={requested_blog.blog_title}
+        src={stories_data.image}
+        alt={stories_data.blog_title}
         className="w-full h-auto  my-6"
       />
       <p className="text-xs text-stone-400 italic font-thin">
-        [ source: {requested_blog.image}]
+        [ source: {stories_data.image}]
       </p>
       <div>
-        <Markdown text={requested_blog.blog_content} />
+        <Markdown text={stories_data.content} />
       </div>
       <div className="border flex flex-col max-w-fit p-2 gap-1 items-center">
         <UpvoteBtn />
-        <p>{requested_blog.likes}</p>
+        <p>{stories_data.likes}</p>
       </div>
     </article>
   );

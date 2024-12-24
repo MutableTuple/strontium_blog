@@ -15,6 +15,8 @@ export default async function BlogsList() {
             upvotes={blog.likes}
             comments={blog.comments}
             image={blog.image}
+            author_image={blog.users.image}
+            author={blog.users.name}
           />
         </Link>
       ))}

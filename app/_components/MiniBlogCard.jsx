@@ -8,6 +8,7 @@ export default async function MiniBlogCard({
   description,
   upvotes,
   author = "author",
+  author_image,
   comments,
   image,
 }) {
@@ -24,8 +25,8 @@ export default async function MiniBlogCard({
             </p>
             <div className="flex text-xs gap-2 items-center">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/9/92/NiKo_2020_interview_crop.jpg"
-                alt=""
+                src={author_image}
+                alt={"user image"}
                 className="h-4 w-4 sm:h-5 sm:w-5 rounded-full object-cover"
               />
               {author}

@@ -7,7 +7,7 @@ export default async function page({ params }) {
   console.log(blogid);
 
   const requested_blog = await getBlogByID(blogid);
-  console.log(requested_blog);
+  console.log("sdsd", requested_blog);
   return (
     <div className="lg:mx-52 md:mx-32 sm:mx-16 mx-8">
       <BlogData requested_blog={requested_blog} />
