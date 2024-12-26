@@ -7,7 +7,7 @@ export default async function BlogsList() {
   return (
     <>
       {blogs.map((blog) => (
-        <Link href={`blog/${blog.id}`}>
+        <Link href={`blog/${blog.title_slug}`}>
           <MiniBlogCard
             id={blog.id}
             title={blog.blog_title}

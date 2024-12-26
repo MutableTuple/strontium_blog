@@ -14,6 +14,7 @@ const generateArticleSchema = (blog) => ({
     name: blog.owner.name || "Anonymous",
   },
   articleBody: blog.blog_content,
+  keywords: blog.blog_keywords || "",
 });
 
 const Markdown = ({ text }) => {
@@ -149,12 +150,18 @@ export default function BlogData({ requested_blog }) {
     .slice(0, 160) // Limit to 160 characters
     .trim();
 
+  // Primary keywords for SEO
+  const primaryKeywords = requested_blog.blog_keywords
+    ? requested_blog.blog_keywords
+    : "";
+
   return (
     <>
       <Head>
         <title>{requested_blog.blog_title}</title>
         <meta name="description" content={metaDescription} />
         <meta name="author" content={requested_blog.author || "Anonymous"} />
+        <meta name="keywords" content={primaryKeywords} />
 
         {/* Open Graph tags for social sharing */}
         <meta property="og:title" content={requested_blog.blog_title} />
@@ -196,7 +203,7 @@ export default function BlogData({ requested_blog }) {
             itemProp="image"
           />
           <figcaption className="text-xs text-stone-400 italic font-thin">
-            [ source: {requested_blog.image}]
+            [ source: {requested_blog.image} ]
           </figcaption>
         </figure>
         <div itemProp="articleBody">
@@ -212,7 +219,7 @@ export default function BlogData({ requested_blog }) {
         {requested_blog.owner && (
           <footer className="mt-8 text-sm text-gray-600 border-b">
             <p itemProp="author" className="font-semibold">
-              Written by: {requested_blog.users.name}
+              Written by: {requested_blog?.users?.name || "author"}
             </p>
             {requested_blog.created_at && (
               <time
@@ -225,7 +232,7 @@ export default function BlogData({ requested_blog }) {
             )}
           </footer>
         )}
-        {requested_blog.blog_keywords ? (
+        {/* {requested_blog.blog_keywords && (
           <div>
             <h1 className="mt-4">Keywords:</h1>
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
@@ -238,9 +245,7 @@ export default function BlogData({ requested_blog }) {
                 ))}
             </ul>
           </div>
-        ) : (
-          ""
-        )}
+        )} */}
       </article>
     </>
   );

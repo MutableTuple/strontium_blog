@@ -57,3 +57,13 @@ export async function getStoryByID(id) {
   if (error) console.log(error);
   return data;
 }
+
+export async function getBlogIDByName(title_slug) {
+  const { data, error } = await supabase
+    .from("blogs")
+    .select("*,users(name,image)")
+    .eq("title_slug", title_slug)
+    .single();
+  if (error) console.log(error);
+  return data;
+}
