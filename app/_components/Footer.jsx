@@ -38,7 +38,7 @@ export default function Footer() {
             <FaFacebook size={24} />
           </Link>
           <Link
-            href="https://www.twitter.com"
+            href="https://x.com/strontium_app"
             target="_blank"
             className="text-gray-800 hover:text-blue-400 transition-colors duration-200"
           >

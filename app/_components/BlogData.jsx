@@ -178,14 +178,13 @@ export default function BlogData({ requested_blog }) {
       </Head>
 
       <article
-        className="max-w-4xl mx-auto px-4"
+        className="sm:max-w-4xl max-w-full mx-auto"
         itemScope
         itemType="https://schema.org/BlogPosting"
       >
-        <h1 className="text-4xl font-bold my-6" itemProp="headline">
+        <h1 className="md:text-4xl text-2xl font-bold my-6" itemProp="headline">
           {requested_blog.blog_title}
         </h1>
-
         <figure>
           <img
             src={requested_blog.image}
@@ -200,11 +199,9 @@ export default function BlogData({ requested_blog }) {
             [ source: {requested_blog.image}]
           </figcaption>
         </figure>
-
         <div itemProp="articleBody">
           <Markdown text={requested_blog.blog_content} />
         </div>
-
         <div className="border flex flex-col max-w-fit p-2 gap-1 items-center">
           <UpvoteBtn
             table="blogs"
@@ -212,20 +209,37 @@ export default function BlogData({ requested_blog }) {
             initialUpvotes={requested_blog.likes}
           />
         </div>
-
-        {requested_blog.author && (
-          <footer className="mt-8 text-sm text-gray-600">
-            <p itemProp="author">Written by: {requested_blog.author}</p>
-            {requested_blog.publishDate && (
+        {requested_blog.owner && (
+          <footer className="mt-8 text-sm text-gray-600 border-b">
+            <p itemProp="author" className="font-semibold">
+              Written by: {requested_blog.users.name}
+            </p>
+            {requested_blog.created_at && (
               <time
                 itemProp="datePublished"
-                dateTime={requested_blog.publishDate}
+                dateTime={requested_blog.created_at}
               >
                 Published on:{" "}
-                {new Date(requested_blog.publishDate).toLocaleDateString()}
+                {new Date(requested_blog.created_at).toLocaleDateString()}
               </time>
             )}
           </footer>
+        )}
+        {requested_blog.blog_keywords ? (
+          <div>
+            <h1 className="mt-4">Keywords:</h1>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
+              {requested_blog.blog_keywords
+                .split("\n")
+                .map((keyword, index) => (
+                  <li key={index} className="bg-gray-100 p-2 rounded shadow-sm">
+                    {keyword}
+                  </li>
+                ))}
+            </ul>
+          </div>
+        ) : (
+          ""
         )}
       </article>
     </>
